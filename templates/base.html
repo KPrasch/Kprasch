@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
+{% load pages_tags mezzanine_tags i18n future staticfiles %}
+
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
+<meta name="description" content="{% block meta_description %}{% endblock %}">
+<title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+<link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
+
+{% ifinstalled mezzanine.blog %}
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
+<link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
+{% endifinstalled %}
+
+{% compress css %}
+<link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+<link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
+<link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
+<link href="{% static "css/grayscale.css" %}" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/static/css/jquery.gridster.css">
+<link rel="stylesheet" type="text/css" href="/static/css/demo.css">
+{% if LANGUAGE_BIDI %}
+<link rel="stylesheet" href="{% static "css/rtl.css" %}">
+{% endif %}
+{% ifinstalled cartridge.shop %}
+<link rel="stylesheet" href="{% static "css/cartridge.css" %}">
+{% if LANGUAGE_BIDI %}
+<link rel="stylesheet" href="{% static "css/cartridge.rtl.css" %}">
+{% endif %}
+{% endifinstalled %}
+{% block extra_css %}{% endblock %}
+{% endcompress %}
+
+<script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
+<script src="/static/js/bootstrap.js"></script>
+<script src="/static/js/bootstrap-extras.js"></script>
+<script src="/static/js/grayscale.js"></script>
+<script src="/static/js/jquery.gridster.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+{% block extra_js %}{% endblock %}
+
+
+<!--[if lt IE 9]>
+<script src="{% static "js/html5shiv.js" %}"></script>
+<script src="{% static "js/respond.min.js" %}"></script>
+<![endif]-->
+
+{% block extra_head %}{% endblock %}
+</head>
+
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i>  <span class="light">K</span> Prasch
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#download">Gallery</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2" style="background-color:black; opacity:0.8;">BLAH BLOHSHO HAKAH</div>
+                    <div class="col-md-8">
+                        <h1 class="brand-heading">Hello,</h1>
+                        <p class="intro-text">I will say something<br>and then I will say something else.</p>
+                        <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+        <div id="Technical" class="col-lg-4">
+        <h2>Technical</h2>
+            UI/UX Design Linux Development Operations  <br>
+            Digital Multimedia <br>
+            Git, HTML5, CSS3, JS / Coffeescript, Python / Django, Arduino <br>
+            Photoshop & GIMP,  Protools & Ardour, Final Cut & Kdenlive <br>
+            Apache, Hendrix, Nginix, Rackspace Cloud <br>
+            MySQL, Postgres, NoSql <br>
+        </div>
+            <div id="practical" class="col-lg-4 col-lg-height">
+                <h2>Practical</h2>
+               <h6> Slashroot Technology Collective, New Paltz, NY </h6>
+    
+                Student / Member / Instructor / Contributor <br>
+                
+               <h6> New Paltz Fire Department, New Paltz, NY </h6>
+                3rd Lieutenant, Firefighter, EMT<br>
+             </div>
+           <div id="educational" class="col-lg-4">
+           <h2>Educational</h2>
+               <h6> Duchess Community College, Poughkeepsie, NY </h6><br>
+                Fire Science / Paramedicine <br><br>
+                
+                <h6>Art Institute of NYC, New York, NY </h6><br>
+                Interactive Media Design <br><br>
+                
+               <h6>BOCES Vocational Career Center - Port Ewen, NY </h6> <br>
+                Graphic Design <br>
+                
+                <h6>Catskill Digital Art Program </h6><br>
+                Photographer <br>
+            </div>  
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Gallery</h2>
+                    <p>More Things to be said. Look at me! I'm Mr. Meeseeks!</p>
+                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            
+                <h2></h2>
+                <p></p>
+                
+                <script src="/static/js/masonary.js"></script>
+                <script src="https://rawgithub.com/desandro/classie/master/classie.js"></script>
+                <div class="col-lg-12">
+                
+                <div id="container" class="masonry">
+                  <div id="grid-1" class="item gigante" data-position="50" data-blur="2" data-focus="10" data-falloff="10" data-direction="y"></div>
+                  <div id="grid-2" class="item" data-position="50" data-blur="2" data-focus="10" data-falloff="10" data-direction="y"></div>
+                  <div id="grid-3" class="item" data-position="50" data-blur="2" data-focus="10" data-falloff="10" data-direction="y"></div>
+                  <div id="grid-4" class="item" data-position="50" data-blur="2" data-focus="10" data-falloff="10" data-direction="y"></div>
+                  <div id="grid-5" class="item" data-position="50" data-blur="2" data-focus="10" data-falloff="10" data-direction="y"></div>
+                  <div id="grid-6" class="item" data-position="50" data-blur="2" data-focus="10" data-falloff="10" data-direction="y"></div>
+                  <div id="grid-7" class="item" data-position="50" data-blur="2" data-focus="10" data-falloff="10" data-direction="y"></div>
+                  <div id="grid-8" class="item" data-position="50" data-blur="2" data-focus="10" data-falloff="10" data-direction="y"></div>
+                  <div id="grid-9" class="item" data-position="50" data-blur="2" data-focus="10" data-falloff="10" data-direction="y"></div>
+                  <div id="grid-10" class="item" data-position="50" data-blur="2" data-focus="10" data-falloff="10" data-direction="y"></div>
+                  <div id="grid-11" class="item" data-position="50" data-blur="2" data-focus="10" data-falloff="10" data-direction="y"></div>
+                  <div id="grid-12" class="item" data-position="50" data-blur="2" data-focus="10" data-falloff="10" data-direction="y"></div>
+                </div>
+                </div>
+                <script>
+                
+                jQuery(document).ready(function() {
+                $('.tiltshift').tiltShift();
+                }); 
+                
+                // http://masonry.desandro.com/masonry.pkgd.js added as external resource
+                // https://rawgithub.com/desandro/classie/master/classie.js added
+                
+                docReady( function() {
+                
+                  var container = document.querySelector('.masonry');
+                  var msnry = new Masonry( container, {
+                    columnWidth: 200
+                  });
+                
+                  eventie.bind( container, 'click', function( event ) {
+                    // don't proceed if item was not clicked on
+                    if ( !classie.has( event.target, 'item' ) ) {
+                      return;
+                    }
+                    // change size of item via class
+                    classie.toggle( event.target, 'gigante' );
+                    // trigger layout
+                    msnry.layout();
+                  });
+                
+                });
+
+                </script>
+                
+        </div>        
+    </section>
+
+    <!-- Map Section -->
+    <div id="map"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; 2014</p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/static/js/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm6lCUbZnMZMoTXIzFJ27ngW7h4k4PjI4"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/static/js/grayscale.js"></script>
+    
+
+</body>
+</html>
