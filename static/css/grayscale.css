@@ -256,7 +256,7 @@ a:focus {
     width: 100%;
     padding: 50px 0;
     color: #fff;
-    background: url(/static/img/full/CaliQuarryPano.jpg) no-repeat center center scroll;
+    background: url(/static/img/full/beach-pano.jpg) no-repeat center center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -276,7 +276,7 @@ a:focus {
 
 @media(min-width:767px) {
     .content-section {
-        padding-top: 250px;
+        padding-top: 0px;
     }
 
     .download-section {
@@ -367,7 +367,7 @@ body {
 }
 
 #technical {
-  background-color:   
+  
     
 }
 #practical {
@@ -379,7 +379,20 @@ body {
     
 }
 
-#about h6 {
-    margin: 10px;
+#about  {
+    background-image: url("/static/img/subtle_carbon.png");   
+    width: 100%;
+}
+
+#about h6  {
+    margin-bottom: -15px;
+}
+
+#about h2 {
+    margin-top: 20px;
+    }
+}
+
+#me {
     
 }
