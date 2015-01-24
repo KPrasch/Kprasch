@@ -18,7 +18,7 @@ $(function() {
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top + 55
+            scrollTop: $($anchor.attr('href')).offset().top - 55
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
     });
@@ -41,7 +41,7 @@ function init() {
         zoom: 11,
 
         // The latitude and longitude to center the map (always required)
-        center: new google.maps.LatLng(37.7833, -122.4167), // New York
+        center: new google.maps.LatLng(37.9672, -122.6028), 
 
         // Disables the default Google Maps UI components
         disableDefaultUI: true,
@@ -169,7 +169,7 @@ function init() {
 
     // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
     var image = '/static/img/map-marker.png';
-    var myLatLng = new google.maps.LatLng(37.7833, -122.4167);
+    var myLatLng = new google.maps.LatLng(37.9672, -122.6028);
     var beachMarker = new google.maps.Marker({
         position: myLatLng,
         map: map,

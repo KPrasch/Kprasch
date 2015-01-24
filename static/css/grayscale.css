@@ -265,13 +265,14 @@ a:focus {
 .contact {
     background-image: url("/static/img/absurdidad.png");
     background-color: white;
-    padding-top: 40px;
+    padding-top: 5px;
+    color: #000;
 }
 
 #photo {
     width: 100%;
     padding: 50px 0;
-    color: #fff;
+    color: #000;
     background: url("/static/img/full/beach-pano.jpg") no-repeat center center scroll;
     background-color: #000;
     -webkit-background-size: cover;
@@ -294,6 +295,7 @@ a:focus {
     text-decoration: none;
     vertical-align: middle;
     width: 100px;
+    margin-top: 30px;
 
 }
 
@@ -408,6 +410,7 @@ body {
 .icons {
   margin-bottom: 10px;  
   height: 35px;
+  padding-left: 4%;
 }
 
 .skill {
@@ -426,9 +429,15 @@ body {
     line-height:22px;
     list-style-type: none;
     text-decoration: none;
-    margin-bottom: 35px;
-    background-color: transparent;
+    margin-bottom: 0px;
+    margin-top: -20px;
+    background-color: rgba(200, 54, 54, 0.5);
     background-image: url("/static/img/absurdidad.png");
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 12px;
 }
 
 
@@ -437,13 +446,17 @@ body {
        background-image: url("/static/img/absurdidad.png");
        color: black;
        background-color: #fff; 
-       padding-top: 40px;
+       padding-top: 5px;
 }
 
 #educational li {
     list-style-type: none;
     list-style: none;
     text-decoration: none;
+}
+
+#educational ul {
+    margin-bottom: 35px;
 }
 
 #about  {
@@ -464,8 +477,12 @@ body {
     vertical-align: middle;
 }
 
+#project-list {
+    margin-bottom:35px;
+}
+
 #project-list ul li img {
-    height: 100px !important;
+    height: 100px;
     width: auto;
     border-top: 3px solid black; 
     list-style-type: none;
