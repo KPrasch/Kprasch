@@ -18,7 +18,7 @@ $(function() {
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
+            scrollTop: $($anchor.attr('href')).offset().top + 55
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
     });
@@ -168,7 +168,7 @@ function init() {
     var map = new google.maps.Map(mapElement, mapOptions);
 
     // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
-    var image = 'img/map-marker.png';
+    var image = '/static/img/map-marker.png';
     var myLatLng = new google.maps.LatLng(37.7833, -122.4167);
     var beachMarker = new google.maps.Marker({
         position: myLatLng,
@@ -176,3 +176,25 @@ function init() {
         icon: image
     });
 }
+
+        var colors = ['#abc293', '#93c2c1', '#c29394', '#aa93c2'];
+        $('.skill').mouseover(function(){
+         var random_color = colors[Math.floor(Math.random() * colors.length)];
+        $(this).css('background-color', random_color);
+        });
+        
+        $('.skill').mouseout(function(){
+        $(this).css('background-color', 'transparent');
+        });
+        
+        $('.proj-list').mouseover(function() {
+           var itemid = $(this).attr('id').match(/proj-(\d+)/)[1];
+           $('#pthumb-'+itemid).stop().animate({height: '140px'}, 400);
+           $('#pthumb-'+itemid).css('border-top', '3px solid orange');
+        });
+        
+         $('.proj-list').mouseout(function() {
+           var itemid = $(this).attr('id').match(/proj-(\d+)/)[1];
+           $('#pthumb-'+itemid).stop().animate({height: '100px'}, 500);
+           $('#pthumb-'+itemid).css('border-top', '3px solid black');
+        });

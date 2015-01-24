@@ -1,6 +1,6 @@
 
 .masonry {
-  left: 2%; 
+  margin-left: 3%; 
 }
 
 /* clearfix */
@@ -9,6 +9,13 @@
   display: block;
   clear: both;
 }
+
+.sm-masonry .item {
+  width:  20px;
+  height: 20px;
+  float: left;
+}
+
 
 .masonry .item {
   width:  200px;

@@ -1,199 +1,220 @@
-<!doctype html>
-<html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
-{% load pages_tags mezzanine_tags i18n future staticfiles %}
+{% include 'base_head.html' %}
 
-<head>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
-<meta name="description" content="{% block meta_description %}{% endblock %}">
-<title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
-<link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
-
-{% ifinstalled mezzanine.blog %}
-<link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
-<link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
-{% endifinstalled %}
-
-{% compress css %}
-<link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
-<link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
-<link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
-<link href="{% static "css/grayscale.css" %}" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="/static/css/jquery.gridster.css">
-<link rel="stylesheet" type="text/css" href="/static/css/demo.css">
-{% if LANGUAGE_BIDI %}
-<link rel="stylesheet" href="{% static "css/rtl.css" %}">
-{% endif %}
-{% ifinstalled cartridge.shop %}
-<link rel="stylesheet" href="{% static "css/cartridge.css" %}">
-{% if LANGUAGE_BIDI %}
-<link rel="stylesheet" href="{% static "css/cartridge.rtl.css" %}">
-{% endif %}
-{% endifinstalled %}
-{% block extra_css %}{% endblock %}
-{% endcompress %}
-
-<script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
-<script src="/static/js/bootstrap.js"></script>
-<script src="/static/js/bootstrap-extras.js"></script>
-<script src="/static/js/grayscale.js"></script>
-<script src="/static/js/jquery.gridster.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" src="/static/js/jquery.js"></script>
-{% block extra_js %}{% endblock %}
-
-
-<!--[if lt IE 9]>
-<script src="{% static "js/html5shiv.js" %}"></script>
-<script src="{% static "js/respond.min.js" %}"></script>
-<![endif]-->
-
-{% block extra_head %}{% endblock %}
 </head>
-
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-play-circle"></i>  <span class="light">K</span> Prasch
-                </a>
-            </div>
+{% include 'nav.html' %}
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#photo">Photo</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#projects">Projects</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Intro Header -->
+<!-- Intro Header -->
     <header class="intro">
         <div class="intro-body">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2" id="intro-left">
-                        
-                        
-                    </div>
-                    <div class="col-md-8">
-                        <h1 class="brand-heading">Hello!</h1>
+                    <div class="col-md-12">
+                        <h1 class="brand-heading">Hello</h1>
                         <p class="intro-text">I'm a Full Stack Generalist, Photographer<br>and Emergency Responder.</p>
-                        <a href="#about" class="btn btn-circle page-scroll">
-                            <i class="fa fa-angle-double-down animated"></i>
-                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-
-    <!-- About Section -->
-    <section id="about" class="container content-section text-center">
-        <div class="row">
-        <div id="technical" class="col-lg-4">
-        <h2>Technical</h2>
-        <h6>General</h6><br>
-            UI/UX Design, Sys/Dev Operations, Digital Multimedia <br><br>
-        <h6>Expression</h6><br>
-            Git, HTML5, CSS3, JS / Coffeescript, Python / Django, Arduino <br><br>
-        <h6>Manipulation</h6><br>
-            Photoshop & GIMP,  Protools & Ardour, Final Cut & Kdenlive <br><br>
-        <h6>Implementation</h6><br>
-            Apache, Hendrix, Nginix, Rackspace Cloud <br><br>
-       <h6> Recolection</h6><br>
-            MySQL, Postgres, NoSql <br><br>
-        </div>
-            <div id="practical" class="col-lg-4 col-lg-height">
-                <h2>Practical</h2>
-               <h6> Slashroot Technology Collective, New Paltz, NY </h6><br>
     
-                Student / Member / Instructor / Contributor <br><br>
-                
-               <h6> New Paltz Fire Department, New Paltz, NY </h6><br>
-                3rd Lieutenant, Firefighter, EMT<br><br>
-               <ul> 
-                    <li><a href="http://www.kraeher.com">Architecht R.Kraeher</a></li>
-                    <li><a href="http://www.almostfamous.com">Almost Famous</a></li>
-                    <li><a href="http://www.carbonads.net">Carbon Ads</a></li>
-                    <li><a href="https://github.com/hangarunderground/hendrix/blob/master">Hendrix</a></li>
-                    <li><a href="https://github.com/SlashRoot/WHAT">The W.H.A.T.</a></li>
-                    <li><a href="https://github.com/SlashRoot/cirque">Cirque</a></li>
-                </ul>
-                
-                
-                
-             </div>
-           <div id="educational" class="col-lg-4">
-           <h2>Educational</h2>
-               <h6> Duchess Community College, Poughkeepsie, NY </h6><br>
-                Fire Science / Paramedicine <br><br>
-                
-                <h6>Art Institute of NYC, New York, NY </h6><br>
-                Interactive Media Design <br><br>
-                
-               <h6>BOCES Vocational Career Center - Port Ewen, NY </h6> <br>
-                Graphic Design <br><br>
-                
-                <h6>Catskill Digital Art Program </h6><br>
-                Photographer <br>
-            </div>  
+<!-- Technical div -->
+    <div id="technical" class="container-fluid content-section text-center">
+    
+       <div class="row technical-snippet">
+            <h2>Technical</h2>
+            <h6> Linux Development Operations - Front End Developer - Digital Multimedia</h6> <br><br>
+            
+            <div class="col-lg-4 skill ">
+                <img class="icons" src="static/img/icons/index.jpeg">   
+                <h6>Expression</h6><br>
+                  Javascript - Python - HTML5 - CSS3 - Bash - Arduino <br><br>
+                  
+            </div> 
+            
+            <div class="col-lg-4 skill"> 
+                <img class="icons" src="static/img/icons/frame.png">        
+                <h6>Construction</h6> <br> 
+                  Django - Flask - Jquery - Bootstrap - Wordpress <br><br>
+            </div> 
+            
+            <div class="col-lg-4 skill"> 
+                <img class="icons" src="static/img/icons/paint.png">
+                <h6>Manipulation</h6><br>
+                    Photoshop - GIMP -  Protools - Ardour - Final Cut - Kdenlive <br><br>
+            </div> 
         </div>
-    </section>
-
-    <!-- Download Section -->
-    <section id="photo" class="content-section text-center">
-        <div class="download-section">
+        
+        <div class="row technical-snippet">
+        
+            <div class="col-lg-4 skill"> 
+                <img class="icons" src="static/img/icons/triangle.jpg">
+                <h6> Recolection</h6><br>
+                     Postgres - MySQL - NoSQL <br><br>
+           </div> 
+           
+            <div class="col-lg-4 skill"> 
+                <img class="icons" src="static/img/icons/hammer.png"> 
+                <h6>Implementation</h6><br>
+                    Ansible - Chef - Apache - Hendrix - Nginix - Varnish - Rackspace <br><br>
+           </div> 
+           
+            <div class="col-lg-4 skill"> 
+                <img class="icons" src="static/img/icons/joystick.png"> 
+                <h6>Control</h6><br>
+                    Git - Subversion - Agile<br><br>
+            </div>    
+        </div>
+    
+    </div>
+    
+<!-- Projects section -->
+    <div id="projects-section" class="container-fluid content-section text-center">
+        <div id="projects" class="container-fluid row">
+        <h2>Projects</h2>
+        
+           <h6> Slashroot Technology Collective, New Paltz, NY </h6>
+                Student / Member / Instructor / Contributor <br><br>
+            
+           <div class="col-lg-6 col-lg-height">  
+               <h6> Technical Experiences </h6><br>
+               
+               <ul style="list-style-type:none;"> 
+                 <li class="proj-list" id="proj-5"><a href="#">This Webpage</a></li>
+                 <li class="proj-list" id="proj-1"><a href="http://www.kraeher.com">Architecht R.Kraeher</a></li>
+                 <li class="proj-list" id="proj-3"><a href="httwww.carbonads.netp://www.almostfamous.com">Almost Famous</a></li>
+                 <li class="proj-list" id="proj-2"><a href="http://www.carbonads.net">Carbon Ads</a></li>
+                 <li class="proj-list" id="proj-4"><a href="http://www.democracycoffee.com">Democracy Coffee</a></li>
+              </ul> 
+          </div>
+          
+           <div class="col-lg-6 col-lg-height"> 
+               <h6> Open Source Contributions </h6><br>  
+                 <ul style="list-style:none; padding-left:0px;">       
+                    <li class="proj-list" id="proj-6"><a href="https://github.com/SlashRoot/WHAT">The W.H.A.T.</a></li>
+                    <li class="proj-list" id="proj-6"><a href="https://github.com/SlashRoot/cirque">Cirque</a></li>
+                    <li class="proj-list" id="proj-7"><a href="https://github.com/kprasch/dispatch.py">Dispatch.py</a></li>
+                    <li class="proj-list" id="proj-6"><a href="https://github.com/hangarunderground/hendrix/blob/master">Hendrix</a></li>
+                  </ul>
+                  <br><br>
+            </div>
+       
+        <div id="project-list">    
+        <ul>
+           <li> <img id="pthumb-1" src="/static/img/icons/ark.png"></li>
+           <li> <img id="pthumb-2" src="/static/img/icons/carbonads.png"></li>
+           <li> <img id="pthumb-3" src="/static/img/icons/almostf.png"></li>
+           <li> <img id="pthumb-4" src="/static/img/icons/dcoffee.png"></li>
+           <li> <img id="pthumb-7" src="/static/img/icons/chart.png"></li> 
+           <li> <img id="pthumb-5" src="/static/img/icons/this.png"></li> 
+           <li> <img id="pthumb-6" src="/static/img/icons/roothub.png"></li>
+        </ul>
+        </div>
+       </div>
+    </div>
+    
+<!-- Training section -->
+    <div id="training" class="container-fluid content-section text-center">
+    
+        <video loop="1" autoplay="1" id="bg-video" controls="true" src="/static/img/cropped-fire-sm.mp4"></video>
+        <div class="container">
+        <div class="row">
+            <h2></h2>
+            <div class="col-lg-9"></div>
+            <div class="col-lg-3 qual-list">
+                <h6> New Paltz Fire Department, New Paltz, NY </h6>
+                  3rd Lieutenant / Firefighter / EMT<br><br>
+                
+                <h6> Training Certifications </h6><br>
+                 <ul>   
+                    <li>FEMA: ICS 5, 100, 200, 700, 800</li>
+                    
+                    <li>NWCGS S-190 & S-190</li>
+                    <li>Firefighter I & II</li>
+                    <li>Firefighter Survival</li>
+                    <li>Truck Company Operations</li>
+                    <li>Firefighter Search and Assist Team</li>
+                    <li>Accident Victim Extrication Training</li>
+                    <li>Fire Behavior and Arson Awareness</li>
+                    <li>Rope Rescue Technician – Basic</li>
+                    <li>Surface Ice Rescue Level 1 Fly Team Technician</li>
+                    <li>Basic Structural Collapse Awareness</li>
+                    <li>Emergency Vehicle Operations Course</li>
+                    <li>Apparatus Operator - Pump Operations</li>
+                </ul>   
+           </div> 
+        </div>  
+        </div>
+    </div>
+           
+<!-- Education div -->       
+    <div id="education-section" class="container-fluid content-section text-center">
+        <div id="educational"  class="row">
+             <h2>Educational</h2>
+             
+             <div class="col-lg-4">
+                <h6> Duchess Community College, Poughkeepsie, NY </h6>
+                Paramedicine<br><br>
+                <img class="icons" src="/static/img/icons/blue-cross.png">
+                <ul>
+                    <li>Introduction to Paramedic</li>
+                    <li>Medical Terminology</li>
+                    <li>Emergency Medical Operations for Paramedic</li>
+                    <li>Emergency Medical Technician Basic – NYS & National Certification</li>
+                </ul>
+            </div>
+            
+             <div class="col-lg-4">  
+                <h6> Duchess Community College, Poughkeepsie, NY </h6>
+                Fire Science<br><br> 
+                <img class="icons" src="/static/img/icons/fire-cross.png">
+                <ul>
+                    <li>Introduction to Fire Science</li>
+                    <li>Fire Combustion and Behavior</li>
+                    <li>Hydraulics and Water Supply</li>
+                    <li>Introduction to Fire Protection</li>
+                    <li>Introduction to Fire Prevention</li>
+                    <li>Strategy and Tactics</li>
+                </ul>
+             </div>  
+              
+            <div class="col-lg-4">
+                <h6>Art Institute of NYC, New York, NY </h6>
+                Interactive Media Design <br><br>
+                <img class="icons" src="/static/img/icons/rgb.png">
+                <ul>
+                <li>Color Theorey</li>
+                <li>Layout and Deign</li>
+                <li>Video for Multimedia</li>
+                <li>Audio for Multimedia</li>
+                </ul>
+            </div>
+             
+       </div>
+    </div>
+    
+<!-- Photo div -->
+    <div id="photo-section" class="content-section text-center">
+        <div id="photo">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Gallery</h2>
-                    <p>More Things to be said. Look at me! I'm Mr. Meeseeks!</p>
-                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+                    <h2>Photography</h2>
+                    <p>Providing an endpoint for Photons.</p>
+                    <a href="#" class="btn btn-default btn-lg">Fullscreen Gallery</a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="projects" class="container content-section text-center">
+    </div>
+    
+<!-- Instagram div -->
+    <div id="instagram" class="container-fluid content-section text-center">
         <div class="row">
-            
-                <h2></h2>
-                <p></p>
-        </div>
-                
-                <script src="/static/js/masonary.js"></script>
-                <script src="https://rawgithub.com/desandro/classie/master/classie.js"></script>
-                
-                <div id="container" style="margin-bottom:-35px; top:-35px;" class="masonry">
+                <div id="container" class="masonry">
                   <div id="grid-1" class="item gigante" data-position="50" data-blur="2" data-focus="10" data-falloff="10" data-direction="y"></div>
                   <div id="grid-2" class="item" data-position="50" data-blur="2" data-focus="10" data-falloff="10" data-direction="y"></div>
-                  <div id="grid-3" class="item" data-position="50" data-blur="2" data-focus="10" data-falloff="10" data-direction="y"></div>
+                  <div id="grid-3" class="item gigante" data-position="50" data-blur="2" data-focus="10" data-falloff="10" data-direction="y"></div>
                   <div id="grid-4" class="item" data-position="50" data-blur="2" data-focus="10" data-falloff="10" data-direction="y"></div>
                   <div id="grid-5" class="item" data-position="50" data-blur="2" data-focus="10" data-falloff="10" data-direction="y"></div>
                   <div id="grid-6" class="item" data-position="50" data-blur="2" data-focus="10" data-falloff="10" data-direction="y"></div>
@@ -204,98 +225,86 @@
                   <div id="grid-11" class="item" data-position="50" data-blur="2" data-focus="10" data-falloff="10" data-direction="y"></div>
                   <div id="grid-12" class="item" data-position="50" data-blur="2" data-focus="10" data-falloff="10" data-direction="y"></div>
                 </div>
-               <div class="row"> </div>
-               
-                <script>
-                
-                jQuery(document).ready(function() {
-                $('.tiltshift').tiltShift();
-                }); 
-                
-                // http://masonry.desandro.com/masonry.pkgd.js added as external resource
-                // https://rawgithub.com/desandro/classie/master/classie.js added
-                
-                docReady( function() {
-                
-                  var container = document.querySelector('.masonry');
-                  var msnry = new Masonry( container, {
-                    columnWidth: 200
-                  });
-                
-                  eventie.bind( container, 'click', function( event ) {
-                    // don't proceed if item was not clicked on
-                    if ( !classie.has( event.target, 'item' ) ) {
-                      return;
-                    }
-                    // change size of item via class
-                    classie.toggle( event.target, 'gigante' );
-                    // trigger layout
-                    msnry.layout();
-                  });
-                
-                });
-                
-                
-
-                </script>
-                
-        </div>        
-    </section>
+       </div>
+        
+        <script>
+            docReady( function() {
+            
+              var container = document.querySelector('.masonry');
+              var msnry = new Masonry( container, {
+                columnWidth: 200
+              });
+            
+              eventie.bind( container, 'click', function( event ) {
+                // don't proceed if item was not clicked on
+                if ( !classie.has( event.target, 'item' ) ) {
+                  return;
+                }
+                // change size of item via class
+                classie.toggle( event.target, 'gigante' );
+                // trigger layout
+                msnry.layout();
+              });
+            
+            });  
+        </script>       
+    </div>
     
-    <!-- Download Section -->
-    <section id="contact" class="content-section text-center">
-        <div class="contact-section">
+<!-- Contact div -->
+    <div id="contact-section" class="content-section text-center">
+        <div class="contact">
             <div class="container">
             
-                <div class="col-lg-4">
-                    <div class="contact-bubbles" id="bubble-1"></div>
+                <div class="col-lg-3">
+                    <div><a href="http://github.com/kprasch" class="contact-bubbles" id="bubble-1"></a></div>
                      <p>KPrasch / Slashroot</p>
                 </div>
                 
-                <div class="col-lg-4">
-                    <div class="contact-bubbles" id="bubble-2"></div>
+                <div class="col-lg-3">
+                    <div><a href="http://kprasch.tumblr.com" class="contact-bubbles" id="bubble-2"></a></div>
                     <p>Photo Blog</p>
                 </div>
                     
-                <div class="col-lg-4">
-                <div class="contact-bubbles" id="bubble-3"></div>
+                <div class="col-lg-3">
+                <div><a href="mailto:kieranprasch@gmail.com" class="contact-bubbles" id="bubble-3"></a></div>
+                <p>kieranprasch@gmail.com</p>
+                </div>    
+                    
+                <div class="col-lg-3">
+                <div><a href="http://www.facebook.com/kieran.prasch" class="contact-bubbles" id="bubble-4"></a></div>
                 <p>Social</p>
                 </div>
                 <div class="row">
-                    <p>
-                    Gmail: kieranprasch@gmail.com <br>
-                    IRC: linusthebear<br>
-                    I'm Currently in the San Francisco, Bay Area
-                    </p>
+                   <h4 style="text-align:center color:black;"> I'm Currently in the San Francisco, Bay Area </h4>  
                 </div>
             </div>
         </div>
-    </section>
-
-
-    <!-- Map Section -->
+    </div>
+    
+    
+<!-- Map div -->
     <div id="map"></div>
-
-    <!-- Footer -->
+    
+<!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>Copyright &copy; 2014</p>
+            <p>Copyright &copy; 2014 - KPrasch</p>
         </div>
     </footer>
-
-    <!-- jQuery -->
+    
+<!-- jQuery -->
     <script src="/static/js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/static/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
+    
+<!-- Bootstrap Core JavaScript -->
+    
+    
+<!-- Plugin JavaScript -->
     <script src="/static/js/jquery.easing.min.js"></script>
-
-    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    
+<!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm6lCUbZnMZMoTXIzFJ27ngW7h4k4PjI4"></script>
        
-    <!-- Custom Theme JavaScript -->
+<!-- Custom Theme JavaScript -->
     <script src="/static/js/grayscale.js"></script>
     
 

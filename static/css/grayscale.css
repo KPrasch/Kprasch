@@ -23,7 +23,6 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0 0 35px;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
@@ -38,7 +37,7 @@ p {
 
 @media(min-width:767px) {
     p {
-        margin: 0 0 35px;
+        margin: 0 0 5px;
         font-size: 20px;
         line-height: 1.6;
     }
@@ -66,7 +65,6 @@ a:focus {
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: #000;
 }
 
 .navbar-custom .navbar-brand {
@@ -94,7 +92,6 @@ a:focus {
 
 .navbar-custom .nav li.active {
     outline: nonte;
-    background-color: rgba(255,255,255,.3);
 }
 
 .navbar-custom .nav li a {
@@ -107,7 +104,7 @@ a:focus {
 .navbar-custom .nav li a:focus,
 .navbar-custom .nav li a.active {
     outline: 0;
-    background-color: rgba(255,255,255,.3);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 @media(min-width:767px) {
@@ -115,19 +112,16 @@ a:focus {
         padding: 10px 0;
         border-bottom: 0;
         letter-spacing: 1px;
-        background: 0 0;
-        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
-        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
-        transition: background .5s ease-in-out,padding .5s ease-in-out;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.4);
     }
 
     .top-nav-collapse {
         padding: 0;
-        background-color: #000;
     }
 
     .navbar-custom.top-nav-collapse {
-        border-bottom: 1px solid rgba(255,255,255,.3);
+        border-bottom: 1px solid rgba(10,10,10,.6);
     }
 }
 
@@ -144,6 +138,7 @@ a:focus {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    text-shadow: 1px 1px #000;
 }
 
 .intro .intro-body {
@@ -172,6 +167,11 @@ a:focus {
     .intro .intro-body .intro-text {
         font-size: 25px;
     }
+}
+
+.pdf-icon {
+    height: 45px;
+    clear: both;
 }
 
 .btn-circle {
@@ -250,6 +250,7 @@ a:focus {
     }
 }
 
+
 .content-section {
     padding-top: 100px;
 }
@@ -261,13 +262,13 @@ a:focus {
 
 }
 
-.contact-section {
+.contact {
     background-image: url("/static/img/absurdidad.png");
     background-color: white;
     padding-top: 40px;
 }
 
-.download-section {
+#photo {
     width: 100%;
     padding: 50px 0;
     color: #fff;
@@ -282,13 +283,13 @@ a:focus {
 .contact-bubbles {
     background-position: 50% center;
     background-repeat: no-repeat;
-    background-size: 110px auto;
+    background-size: 130px auto;
     border-radius: 50%;
     float: left;
     height: 100px;
     list-style-type: none;
     margin-bottom: 5%;
-    margin-left: 35%;
+    margin-left: 30%;
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
@@ -298,9 +299,9 @@ a:focus {
 
 #bubble-1 { background-image: url("/static/img/github-mark.png"); }
 #bubble-2 { background-image: url("/static/img/tumblr-mark.png"); }
-#bubble-3 { background-image: url("/static/img/fb-mark.png"); }
+#bubble-3 { background-image: url("/static/img/gmail-icon.png"); }
+#bubble-4 { background-image: url("/static/img/fb-mark.png"); }
 
-}
 .contact-bubbles li {list-style-type: none;}
 
 #map {
@@ -311,11 +312,7 @@ a:focus {
 
 @media(min-width:767px) {
     .content-section {
-        padding-top: 0px;
-    }
-
-    .download-section {
-        padding: 100px 0;
+        padding: 0px;
     }
 
     #map {
@@ -370,6 +367,7 @@ ul.banner-social-buttons {
 }
 
 footer {
+    background-image: url("/static/img/subtle_carbon.png"); 
     padding: 50px 0;
 }
 
@@ -386,7 +384,7 @@ footer p {
 ::selection {
     text-shadow: none;
     background: #fcfcfc;
-    background: rgba(255,255,255,.2);
+    background: (255,255,255,.2);
 }
 
 img::selection {
@@ -402,22 +400,112 @@ body {
 }
 
 #technical {
-      border-right: 1px dotted -moz-comboboxtext;
-    
+      background-image: url("/static/img/absurdidad.png");  
+      color: black;
+      background-color: #fff; 
 }
-#practical {
+
+.icons {
+  margin-bottom: 10px;  
+  height: 35px;
+}
+
+.skill {
+   background-color: none; 
+}
+
+.qual-list ul{
+    line-height:22px;
+    list-style-type: none;
+    text-decoration: none;
+    margin-bottom: 35px;
     
 }
 
+.qual-list {
+    line-height:22px;
+    list-style-type: none;
+    text-decoration: none;
+    margin-bottom: 35px;
+    background-color: transparent;
+    background-image: url("/static/img/absurdidad.png");
+}
+
+
+
 #educational {
-    
-       border-left: 1px dotted -moz-comboboxtext; 
+       background-image: url("/static/img/absurdidad.png");
+       color: black;
+       background-color: #fff; 
+       padding-top: 40px;
+}
+
+#educational li {
+    list-style-type: none;
+    list-style: none;
+    text-decoration: none;
 }
 
 #about  {
-    background-image: url("/static/img/subtle_carbon.png");   
     width: 100%;
 }
+
+
+
+#projects {
+    background-color: black;
+    background-image: url("/static/img/subtle_carbon.png"); 
+}
+
+
+#fire-port {
+    margin: 20% auto auto 10%;
+    max-height: 250px;
+    vertical-align: middle;
+}
+
+#project-list ul li img {
+    height: 100px !important;
+    width: auto;
+    border-top: 3px solid black; 
+    list-style-type: none;
+    list-style: none;
+    text-decoration: none;
+    clear: none;
+    display: inline;
+
+}
+#project-list ul li {
+    display: inline;
+    width: auto;
+    list-style-type: none;
+    list-style: none;
+    text-decoration: none;
+    clear: none;
+
+}
+
+
+#training {
+  background-image: url("/static/img/absurdidad.png");
+}
+
+#instagram {
+    background-color: black;
+    background-image: url("/static/img/subtle_carbon.png"); 
+    
+}
+
+#bg-video {
+    position: fixed;
+    left: 0;
+    top: 55px;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+ }
 
 #about h6  {
     margin-bottom: -15px;
@@ -425,9 +513,33 @@ body {
 
 #about h2 {
     margin-top: 20px;
-    }
+    color: #ffd859;
 }
 
-#me {
-    
+#technical h2 {
+  color: #BE252A; 
+  margin-top: 20px; 
+   
+}
+
+#educational h2 {
+  color: #BE252A;  
+  margin-top: 20px;  
+   
+}
+
+.row{
+    margin-right: 0;
+    margin-left: 0;  
+}
+
+footer {
+  background-color: #F8F8F8;
+  border-top: 1px solid #E7E7E7;
+  padding: 15px 0 30px;
+  margin-top: 0px;
+}
+
+a {
+    color: #5980ff;
 }
