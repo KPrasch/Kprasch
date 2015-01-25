@@ -4,102 +4,39 @@
 <body>
 
 
-<script src="//ajax.googleapis.colim/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-
-<link  href="/static/css/photor.min.css" rel="stylesheet"> <!-- 1.4 KB in gzip -->
-<script src="/static/js/photor.min.js"></script> <!-- 5 KB in gzip -->
-
-<div class="photor">
-
-    <div class="photor__viewport">
-
-        <div class="photor__viewportLayer">
-
-            <!-- Add photos -->
+   <div id="container" class="masonry-gallery">
+               
+                
+                {% for image in images %}
+                    
+                      
+                      <div class="item-gallery" style="background-image: url('/static/img/gallery/high_res/{{ image }}');"></div>
+                      
+                {% endfor %}
+                
+    </div>        
+        
+        <script>
+            docReady( function() {
             
+              var container = document.querySelector('.masonry-gallery');
+              var msnry = new Masonry( container, {
+                columnWidth: 200
+              });
             
-
-            {% for image in images %}
+              eventie.bind( container, 'click', function( event ) {
+                // don't proceed if item was not clicked on
+                if ( !classie.has( event.target, 'item-gallery' ) ) {
+                  return;
+                }
+                // change size of item via class
+                classie.toggle( event.target, 'item-gigante-gallery' );
+                // trigger layout
+                msnry.layout();
+              });
             
-            <img src="/static/img/gallery/high_res/{{ image }}" data-thumb="/static/img/gallery/thumb_res/{{ image }}">
-            
-            {% endfor %}
-            
-            
-        </div>
-
-        <div class="photor__viewportControl">
-            <div class="photor__viewportControlPrev"></div>
-            <div class="photor__viewportControlNext"></div>
-        </div>
-
-    </div>
-
-    <div class="photor__thumbs">
-        <div class="photor__thumbsWrap"></div>
-    </div>
-
-</div>
-
-<script>
-
-    $('.photor').photor({
-
-    // General options
-    current: 5,           // {Number}  Index of start slide
-    delay: 300,           // {Number}  Transition duration
-    loop: true,          // {Boolean} Loop gallery
-    slidesOnScreen: 1,    // {Number}  Number of visible slides in viewport
-
-    // Handlers
-    single: false,        // {Boolean} Initialize event handlers if gallery contains only one photo?
-    keyboard: true,       // {Boolean} Initialize keyboard event handlers?
-
-    // Prefixes
-    slideIdPrefix: '_',   // {String}  Prefix for class with slide index (e.g. "_12")
-    ieClassPrefix: '_ie', // {String}  Prefix for class with IE version (e.g. "_ie8")
-
-    // Classnames
-    control: 'photor__viewportControl',
-    next: 'photor__viewportControlNext',
-    prev: 'photor__viewportControlPrev',
-    thumbs: 'photor__thumbs',
-    thumbsLayer: 'photor__thumbsWrap',
-    thumb: 'photor__thumbsWrapItem',
-    thumbImg: 'photor__thumbsWrapItemImg',
-    thumbFrame: 'photor__thumbsWrapFrame',
-    viewport: 'photor__viewport',
-    layer: 'photor__viewportLayer',
-    slide: 'photor__viewportLayerSlide',
-    slideImg: 'photor__viewportLayerSlideImg',
-
-    // State modifiers
-    _loading: '_loading',       // Photo is loading
-    _current: '_current',       // Current slide or thumbnail
-    _dragging: '_dragging',     // Dragging in progress
-    _disabled: '_disabled',     // Control element is disabled (e.g. left button on first slide)
-    _alt: '_alt',               // For photos with an alt attribute
-    _single: '_single',         // Gallery contains only one photo
-    _animated: '_animated',     // Animation in progress
-    _hidden: '_hidden',         // Slide is hidden
-
-    // Algorithm
-    _auto: '_auto',             // Photo is larger than viewport
-    _center: '_center',         // Photo is smaller than viewport
-
-    // Orientation
-    _portrait: '_portrait',     // [image width/image height] < [gallery width/gallery height]
-    _landscape: '_landscape',   // [image width/image height] >= [gallery width/gallery height]
-
-    // Thumbs
-    _draggable: '_draggable',   // Dragging is allowed for thumbnails
-
-    // Transition callback
-    onShow: function(instance) {}
-
-});
-    
-</script>
+            });  
+        </script>       
 
 </body>
 </html>

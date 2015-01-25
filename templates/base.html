@@ -223,7 +223,7 @@
                 {% for image in instagram_photo_urls %}
                 
                       {% if forloop.first %}
-                     <a href="/gallery"> <div id="block-port" class="item"><span id="block-port-text">fullscreen gallery</span></div></a>
+                     <a href="/gallery"> <div id="block-port" class="item"><span id="block-port-text">fullscreen gallery<br>(100+ Mb!)</span></div></a>
                       {% endif %}
                       
                       {% if forloop.counter|divisibleby:4  %}
@@ -298,7 +298,9 @@
 <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>Copyright &copy; 2014 - KPrasch</p>
+            <p style="font-size:10px;">Copyright &copy; K. Prasch 2015. All Rights Reserved.<br>
+                Please, don't steal my images, just ask :-)
+            </p>
         </div>
     </footer>
     

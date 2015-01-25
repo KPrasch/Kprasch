@@ -21,7 +21,7 @@ urlpatterns = i18n_patterns("",
 
 urlpatterns += patterns('',
     url("^$", "views.main", name="home"),
-    url("^gallery/make_thumbs", "views.make_thumbs", name="home"),
+    url("^gallery", "views.gallery"),
 )
 
 # Adds ``STATIC_URL`` to the context of error pages, so that error
