@@ -45,19 +45,17 @@ p {
 
 a {
     color: #219ab3;
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
+    text-decoration: none;
+
 }
 
 a:hover,
 a:focus {
     text-decoration: none;
-    color: #11505d;
 }
 
 .light {
-    font-weight: 400;
+    font-weight: 400;   
 }
 
 .navbar-custom {
@@ -276,26 +274,45 @@ a:focus {
 }
 
 #training p {
-color: #000;
-font-weight: 700;
-text-transform: uppercase;
-font-size: 12px;
-position: relative;
-bottom: 10px;
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    position: relative;
+    bottom: 10px;
 }
 
+#block-port-text {
+    color: orange;
+    position: relative;
+    top: 85px;
+    text-transform: uppercase;
+    font-weight:700;
+    
+}
+
+#block-port {
+    background-color:#fff;
+    
+}
 
 #photo {
     width: 100%;
-    padding: 50px 0;
-    color: #000;
+    color: #fff;
     background: url("/static/img/full/beach-pano.jpg") no-repeat center center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    height:10%;
+    
+    
+    
+    
 }
+
+
 
 .contact-bubbles {
     background-position: 50% center;
@@ -343,9 +360,7 @@ bottom: 10px;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 400;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
+
 }
 
 .btn-default {
@@ -359,7 +374,6 @@ bottom: 10px;
     border: 1px solid #219ab3;
     outline: 0;
     color: #000;
-    background-color: #219ab3;
 }
 
 ul.banner-social-buttons {
@@ -396,13 +410,13 @@ footer p {
 ::-moz-selection {
     text-shadow: none;
     background: #fcfcfc;
-    background: rgba(255,255,255,.2);
+    background: rgba(255,255,255,0.2);
 }
 
 ::selection {
     text-shadow: none;
     background: #fcfcfc;
-    background: (255,255,255,.2);
+    background: (255,255,255,0.2);
 }
 
 img::selection {
@@ -523,8 +537,9 @@ body {
 }
 
 
-#training {
+#training-section {
   background-image: url("/static/img/absurdidad.png");
+  baclground-size: 5px;
 }
 
 #instagram {

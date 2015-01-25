@@ -29,6 +29,7 @@
 {% block extra_css %}{% endblock %}
 {% endcompress %}
 
+{% compress js %}
 <script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
 <script src="/static/js/bootstrap.js"></script>
 <script src="/static/js/bootstrap-extras.js"></script>
@@ -36,6 +37,7 @@
 <script type="text/javascript" src="/static/js/jquery.js"></script>
 <script src="/static/js/masonary.js"></script>
 <script src="https://rawgithub.com/desandro/classie/master/classie.js"></script>
+{% endcompress %}
 {% block extra_js %}{% endblock %}
 
 <!--[if lt IE 9]>

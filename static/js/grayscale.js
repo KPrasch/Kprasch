@@ -44,7 +44,7 @@ function init() {
         center: new google.maps.LatLng(37.9672, -122.6028), 
 
         // Disables the default Google Maps UI components
-        disableDefaultUI: true,
+        disableDefaultUI: false,
         scrollwheel: false,
         draggable: true,
 
@@ -190,7 +190,7 @@ function init() {
         $('.proj-list').mouseover(function() {
            var itemid = $(this).attr('id').split('-')[1];
            $('#proj-'+itemid+' a').css('color', 'orange');
-           $('#pthumb-'+itemid).stop().animate({height: '140px'}, 400);
+           $('#pthumb-'+itemid).stop().animate({height: '140px'}, 200);
            $('#pthumb-'+itemid).css('border-top', '3px solid orange');
            
         });
@@ -198,6 +198,6 @@ function init() {
          $('.proj-list').mouseout(function() {
            var itemid = $(this).attr('id').split('-')[1];
            $('#proj-'+itemid+' a').css('color', '#5980ff');
-           $('#pthumb-'+itemid).stop().animate({height: '100px'}, 500);
+           $('#pthumb-'+itemid).stop().animate({height: '100px'},200);
            $('#pthumb-'+itemid).css('border-top', '3px solid black');
         });
