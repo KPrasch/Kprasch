@@ -275,6 +275,15 @@ a:focus {
     
 }
 
+#training p {
+color: #000;
+font-weight: 700;
+text-transform: uppercase;
+font-size: 12px;
+position: relative;
+bottom: 10px;
+}
+
 
 #photo {
     width: 100%;
@@ -475,6 +484,10 @@ body {
 #projects {
     background-color: black;
     background-image: url("/static/img/subtle_carbon.png"); 
+}
+
+#projects ul a:hover {
+    color: orange
 }
 
 

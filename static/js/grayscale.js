@@ -188,13 +188,16 @@ function init() {
         });
         
         $('.proj-list').mouseover(function() {
-           var itemid = $(this).attr('id').match(/proj-(\d+)/)[1];
+           var itemid = $(this).attr('id').split('-')[1];
+           $('#proj-'+itemid+' a').css('color', 'orange');
            $('#pthumb-'+itemid).stop().animate({height: '140px'}, 400);
            $('#pthumb-'+itemid).css('border-top', '3px solid orange');
+           
         });
         
          $('.proj-list').mouseout(function() {
-           var itemid = $(this).attr('id').match(/proj-(\d+)/)[1];
+           var itemid = $(this).attr('id').split('-')[1];
+           $('#proj-'+itemid+' a').css('color', '#5980ff');
            $('#pthumb-'+itemid).stop().animate({height: '100px'}, 500);
            $('#pthumb-'+itemid).css('border-top', '3px solid black');
         });
