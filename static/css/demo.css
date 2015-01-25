@@ -38,6 +38,12 @@
   opacity: 1.0;
 }
 
+.item.gigante:hover {
+  width: 400px;
+  height: 400px;
+  opacity: 0.6;
+}
+
 .item:hover {
 
   opacity: 1.0;
