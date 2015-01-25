@@ -19,12 +19,11 @@
             
             
 
-{% for i in images %}
-
-<img src="/static/img/gallery/high_res/0.jpg" data-thumb="thumbs/1.jpg">
-
-{{i}}
-{% endfor %}
+            {% for image in images %}
+            
+            <img src="/static/img/gallery/high_res/{{ image }}" data-thumb="/static/img/gallery/thumb_res/{{ image }}">
+            
+            {% endfor %}
             
             
         </div>
@@ -43,9 +42,63 @@
 </div>
 
 <script>
-    $(document).ready(function() {
-        $('.photor').photor();
-    });
+
+    $('.photor').photor({
+
+    // General options
+    current: 5,           // {Number}  Index of start slide
+    delay: 300,           // {Number}  Transition duration
+    loop: true,          // {Boolean} Loop gallery
+    slidesOnScreen: 1,    // {Number}  Number of visible slides in viewport
+
+    // Handlers
+    single: false,        // {Boolean} Initialize event handlers if gallery contains only one photo?
+    keyboard: true,       // {Boolean} Initialize keyboard event handlers?
+
+    // Prefixes
+    slideIdPrefix: '_',   // {String}  Prefix for class with slide index (e.g. "_12")
+    ieClassPrefix: '_ie', // {String}  Prefix for class with IE version (e.g. "_ie8")
+
+    // Classnames
+    control: 'photor__viewportControl',
+    next: 'photor__viewportControlNext',
+    prev: 'photor__viewportControlPrev',
+    thumbs: 'photor__thumbs',
+    thumbsLayer: 'photor__thumbsWrap',
+    thumb: 'photor__thumbsWrapItem',
+    thumbImg: 'photor__thumbsWrapItemImg',
+    thumbFrame: 'photor__thumbsWrapFrame',
+    viewport: 'photor__viewport',
+    layer: 'photor__viewportLayer',
+    slide: 'photor__viewportLayerSlide',
+    slideImg: 'photor__viewportLayerSlideImg',
+
+    // State modifiers
+    _loading: '_loading',       // Photo is loading
+    _current: '_current',       // Current slide or thumbnail
+    _dragging: '_dragging',     // Dragging in progress
+    _disabled: '_disabled',     // Control element is disabled (e.g. left button on first slide)
+    _alt: '_alt',               // For photos with an alt attribute
+    _single: '_single',         // Gallery contains only one photo
+    _animated: '_animated',     // Animation in progress
+    _hidden: '_hidden',         // Slide is hidden
+
+    // Algorithm
+    _auto: '_auto',             // Photo is larger than viewport
+    _center: '_center',         // Photo is smaller than viewport
+
+    // Orientation
+    _portrait: '_portrait',     // [image width/image height] < [gallery width/gallery height]
+    _landscape: '_landscape',   // [image width/image height] >= [gallery width/gallery height]
+
+    // Thumbs
+    _draggable: '_draggable',   // Dragging is allowed for thumbnails
+
+    // Transition callback
+    onShow: function(instance) {}
+
+});
+    
 </script>
 
 </body>

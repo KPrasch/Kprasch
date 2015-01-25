@@ -269,6 +269,13 @@ a:focus {
     color: #000;
 }
 
+#instagram-title {
+    opacity: 0.8;
+    padding:20px;
+    
+}
+
+
 #photo {
     width: 100%;
     padding: 50px 0;
