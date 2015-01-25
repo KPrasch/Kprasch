@@ -1,0 +1,53 @@
+{% include 'base_head.html' %}
+
+</head>
+<body>
+
+
+<script src="//ajax.googleapis.colim/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<link  href="/static/css/photor.min.css" rel="stylesheet"> <!-- 1.4 KB in gzip -->
+<script src="/static/js/photor.min.js"></script> <!-- 5 KB in gzip -->
+
+<div class="photor">
+
+    <div class="photor__viewport">
+
+        <div class="photor__viewportLayer">
+
+            <!-- Add photos -->
+            
+            
+
+{% for i in images %}
+
+<img src="/static/img/gallery/high_res/0.jpg" data-thumb="thumbs/1.jpg">
+
+{{i}}
+{% endfor %}
+            
+            
+        </div>
+
+        <div class="photor__viewportControl">
+            <div class="photor__viewportControlPrev"></div>
+            <div class="photor__viewportControlNext"></div>
+        </div>
+
+    </div>
+
+    <div class="photor__thumbs">
+        <div class="photor__thumbsWrap"></div>
+    </div>
+
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('.photor').photor();
+    });
+</script>
+
+</body>
+</html>
+

@@ -1,5 +1,7 @@
 from instagram.client import InstagramAPI
 from django.shortcuts import render
+from django.conf import settings
+import os
 
 def main(request):
     instagram_photo_urls = []
@@ -11,3 +13,8 @@ def main(request):
     #    instagram_photo_urls.extend([media.images['standard_resolution'].url])
      
     return render(request, 'base.html', instagram_photo_urls)
+
+def gallery(request):
+    images = os.listdir(os.path.join(settings.PROJECT_ROOT, "static/img/gallery/high_res"),)
+    
+    return render(request, 'gallery.html', images)
