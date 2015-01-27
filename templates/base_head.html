@@ -1,48 +1,33 @@
 <!doctype html>
 <html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
-{% load pages_tags mezzanine_tags i18n future staticfiles %}
-
 <head>
 
 <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
 <meta name="description" content="{% block meta_description %}{% endblock %}">
-<title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+<title>|KPrasch</title>
 <link rel="shortcut icon" href="/static/img/favicon.ico">
 
-{% compress css %}
-<link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
-<link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
-<link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
-<link href="{% static "css/grayscale.css" %}" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/bootstrap.css">
+<link rel="stylesheet" href="/static/css/mezzanine.css">
+<link rel="stylesheet" href="/static/css/bootstrap-theme.css">
+<link href="/static/css/grayscale.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="/static/css/demo.css">
-{% if LANGUAGE_BIDI %}
-<link rel="stylesheet" href="{% static "css/rtl.css" %}">
-{% endif %}
-{% ifinstalled cartridge.shop %}
-<link rel="stylesheet" href="{% static "css/cartridge.css" %}">
-{% if LANGUAGE_BIDI %}
-<link rel="stylesheet" href="{% static "css/cartridge.rtl.css" %}">
-{% endif %}
-{% endifinstalled %}
-{% block extra_css %}{% endblock %}
-{% endcompress %}
+<link rel="stylesheet" href="/static/css/rtl.css">
+<link rel="stylesheet" href="/static/css/cartridge.css">
+<link rel="stylesheet" href="/static/css/cartridge.rtl.css">
 
-{% compress js %}
-<script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
 <script src="/static/js/bootstrap.js"></script>
 <script src="/static/js/bootstrap-extras.js"></script>
 <script src="/static/js/grayscale.js"></script>
 <script type="text/javascript" src="/static/js/jquery.js"></script>
 <script src="/static/js/masonary.js"></script>
 <script src="https://rawgithub.com/desandro/classie/master/classie.js"></script>
-{% endcompress %}
-{% block extra_js %}{% endblock %}
 
 <!--[if lt IE 9]>
-<script src="{% static "js/html5shiv.js" %}"></script>
-<script src="{% static "js/respond.min.js" %}"></script>
+<script src="/static/js/html5shiv.js"></script>
+<script src="/static/js/respond.min.js"></script>
 <![endif]-->
 
-{% block extra_head %}{% endblock %}
+</head>
