@@ -220,9 +220,11 @@
                 
                 {% for image in instagram_photo_urls %}
                 
+                      {% comment %}
                       {% if forloop.first %}
                      <a href="/gallery"> <div id="block-port" class="item"><span id="block-port-text">fullscreen gallery<br>(100+ Mb!)</span></div></a>
                       {% endif %}
+                      {% endcomment %}
                       
                       {% if forloop.counter|divisibleby:4  %}
                         <div class="item gigante" style="background-image: url('{{ image }}');"></div>
@@ -288,8 +290,7 @@
             </div>
         </div>
     </div>
-    
-    
+      
 <!-- Map div -->
     <div id="map"></div>
     
@@ -302,21 +303,20 @@
         </div>
     </footer>
     
-<!-- jQuery -->
-    <script src="/static/js/jquery.js"></script>
-    
-<!-- Bootstrap Core JavaScript -->
-    
-    
-<!-- Plugin JavaScript -->
-    <script src="/static/js/jquery.easing.min.js"></script>
-    
 <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm6lCUbZnMZMoTXIzFJ27ngW7h4k4PjI4"></script>
        
-<!-- Custom Theme JavaScript -->
-    <script src="/static/js/grayscale.js"></script>
-    
+<!-- JavaScript -->
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    {% load compress %}
+    {% compress js %}
+    <script type="text/javascript" src="/static/js/bootstrap-extras.js"></script>
+    <script type="text/javascript" src="/static/js/main.js"></script>
+    {% endcompress %}     
+
+
 
 </body>
 </html>

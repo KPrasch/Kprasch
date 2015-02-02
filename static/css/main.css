@@ -595,3 +595,73 @@ footer {
 a {
     color: #5980ff;
 }
+
+
+.masonry, .masonry-gallery {
+  margin-left: 3%; 
+}
+
+/* clearfix */
+.masonry:after, .masonry-gallery;after  {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.sm-masonry .item {
+  width:  20px;
+  height: 20px;
+  float: left;
+}
+
+
+.masonry .item {
+  width:  200px;
+  height: 200px;
+  float: left;
+}
+
+.masonry-gallery .item-gallery {
+  width:  490px;
+  height: 325px;
+  float: left;
+}
+
+.item-gallery { background-size: 490px 325px;}
+.item { background-size: 400px 400px; opacity: 0.7;}
+
+.item-gigante-gallery {
+  width: 800px;
+  height: 600px;
+  opacity: 1.0;
+}
+
+.item.gigante {
+  width: 400px;
+  height: 400px;
+  opacity: 1.0;
+}
+
+.item.gigante:hover {
+  width: 400px;
+  height: 400px;
+  opacity: 0.6;
+}
+
+.item.gigante-gallery:hover {
+  width: 800px;
+  height: 600px;
+  opacity: 0.6;
+}
+
+.item-gallery:hover {
+
+  opacity: 0.8;
+
+}
+
+.item:hover {
+
+  opacity: 1.0;
+
+}

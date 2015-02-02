@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Kprasch',
+    'compressor'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -109,4 +110,8 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     #'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'compressor.finders.CompressorFinder',
 )
+
+COMPRESS_ROOT = os.path.join(BASE_DIR, '/staticfiles/compressed')
+COMPRESS_ENABLED = False
