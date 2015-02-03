@@ -1,9 +1,3 @@
-/*!
- * Start Bootstrap - Grayscale Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
 // jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
     if ($(".navbar").offset().top > 50) {
@@ -177,27 +171,27 @@ function init() {
     });
 }
 
-        var colors = ['#abc293', '#93c2c1', '#c29394', '#aa93c2'];
-        $('.skill').mouseover(function(){
-         var random_color = colors[Math.floor(Math.random() * colors.length)];
-        $(this).css('background-color', random_color);
-        });
-        
-        $('.skill').mouseout(function(){
-        $(this).css('background-color', 'transparent');
-        });
-        
-        $('.proj-list').mouseover(function() {
-           var itemid = $(this).attr('id').split('-')[1];
-           $('#proj-'+itemid+' a').css('color', 'orange');
-           $('#pthumb-'+itemid).stop().animate({height: '140px'}, 200);
-           $('#pthumb-'+itemid).css('border-top', '3px solid orange');
-           
-        });
-        
-         $('.proj-list').mouseout(function() {
-           var itemid = $(this).attr('id').split('-')[1];
-           $('#proj-'+itemid+' a').css('color', '#5980ff');
-           $('#pthumb-'+itemid).stop().animate({height: '100px'},200);
-           $('#pthumb-'+itemid).css('border-top', '3px solid black');
-        });
+    var colors = ['#abc293', '#93c2c1', '#c29394', '#aa93c2'];
+    $('.skill').mouseover(function(){
+     var random_color = colors[Math.floor(Math.random() * colors.length)];
+    $(this).css('background-color', random_color);
+    });
+    
+    $('.skill').mouseout(function(){
+    $(this).css('background-color', 'transparent');
+    });
+    
+    $('.proj-list').mouseover(function() {
+       var itemid = $(this).attr('id').split('-')[1];
+       $('#proj-'+itemid+' a').css('color', 'orange');
+       $('#pthumb-'+itemid).stop().animate({height: '110px'}, 200);
+       $('#pthumb-'+itemid).css('border-top', '3px solid orange');
+       
+    });
+    
+     $('.proj-list').mouseout(function() {
+       var itemid = $(this).attr('id').split('-')[1];
+       $('#proj-'+itemid+' a').css('color', '#5980ff');
+       $('#pthumb-'+itemid).stop().animate({height: '90px'},200);
+       $('#pthumb-'+itemid).css('border-top', '3px solid black');
+    });

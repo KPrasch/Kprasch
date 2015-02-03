@@ -20,7 +20,7 @@
     </header>
     
 <!-- Technical div -->
-    <div id="technical-section" class="container-fluid content-section text-center">
+    <div id="technical-section" classf="container-fluid content-section text-center">
     <div id="technical">
        <div class="row technical-snippet">
             <h2>Technical</h2>
@@ -57,7 +57,7 @@
             <div class="col-lg-4 skill"> 
                 <img class="icons" src="static/img/icons/hammer.png"> 
                 <h6>Implementation</h6><br>
-                    Ansible - Chef - Apache - Hendrix - Nginix - Gunicorn - Varnish - Rackspace - AWS <br><br>
+                    Ansible - Chef - Apache - Hendrix - Nginix - Gunicorn - Varnish <br> Rackspace - AWS <br><br>
            </div> 
            
             <div class="col-lg-4 skill"> 
@@ -119,7 +119,7 @@
 <!-- Training section -->
     <div id="training-section" class="container-fluid content-section text-center">
     
-        <video loop="1" autoplay="1" id="bg-video" controls="true" src="/static/img/cropped-fire-sm.mp4"></video>
+        <video loop="1" autoplay="1" id="bg-video" controls="true" src="/static/img/cropped-fire.mp4"></video>
         <div class="container">
         <div class="row">
             <h2></h2>
@@ -152,7 +152,7 @@
     </div>
            
 <!-- Education div -->       
-    <div id="education-section" class="container-fluid content-section text-center">
+    <div id="educational-section" class="content-section">
         <div id="educational"  class="row">
              <h2>Academic</h2>
              
@@ -310,7 +310,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/js/bootstrap.min.js"></script>
+    {% load compress %}
+    {% compress js %}
     <script src="/static/js/main.js"></script>
-  
-    </body>
+    {% endcompress %}     
+
+
+
+</body>
 </html>
