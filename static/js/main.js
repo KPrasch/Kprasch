@@ -172,12 +172,12 @@ function init() {
 }
 
     var colors = ['#abc293', '#93c2c1', '#c29394', '#aa93c2'];
-    $('.skill').mouseover(function(){
+    $('.skill').mouseenter(function(){
      var random_color = colors[Math.floor(Math.random() * colors.length)];
     $(this).css('background-color', random_color);
     });
     
-    $('.skill').mouseout(function(){
+    $('.skill').mouseleave(function(){
     $(this).css('background-color', 'transparent');
     });
     

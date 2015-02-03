@@ -531,6 +531,13 @@ body {
   background-image:url(/static/img/subtle_carbon.png)
 }
 
+#where {
+    padding: 25px;
+    text-align: center;
+    color: #000;
+    margin-top: 20px; 
+}
+
 #bg-video {
   position:fixed;
   left:0;
