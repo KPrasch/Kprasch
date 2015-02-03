@@ -466,11 +466,12 @@ body {
   list-style:none;
   text-decoration:none;
   font-size: 13px;
+  padding-left: 0px;
 }
 
 #educational ul {
   margin-bottom:35px;
-  padding-left: 0px;
+  padding-left: 0px !important;
 }
 
 #educational-section {
