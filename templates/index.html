@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="static/vendor/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Theme CSS -->
+    <link href="static/vendor/css/simple-sidebar.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom CSS -->
+    <link href="static/css/styles.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    {% block head %}
+      <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+      <title>{% block title %}{% endblock %}KPrasch</title>
+    {% endblock %}
+
+</head>
+
+<body id="body">
+
+    <main id="wrapper">
+
+    {% include 'sidebar.html' %}
+
+    {% block content %}
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1></h1>
+                        <p><code>#page-content-wrapper</code></p>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </main>
+    <!-- /#wrapper -->
+    {% endblock %}
+
+
+    {% include 'footer.html' %}
+
+
+    <!-- JS Links -->
+    <area>
+      <!-- jQuery -->
+      <script src="static/vendor/js/jquery.js"></script>
+
+      <!-- Bootstrap Core JavaScript -->
+      <script src="static/vendor/js/bootstrap.min.js"></script>
+
+      <!-- Menu Toggle Script -->
+      <script src="static/js/script.js"></script>
+    <area>
+
+</body>
+
+</html>
